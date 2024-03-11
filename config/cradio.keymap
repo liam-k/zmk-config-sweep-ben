@@ -228,6 +228,14 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             flavor = "tap-preferred";
             bindings = <&to>, <&kp>;
         };
+
+  		z_eszett: behavior_tap {
+	        compatible = "zmk,behavior-tap";
+	        label = "TAP_ESZETT";
+	        #binding-cells = <2>;
+	        tapping-term-ms = <200>;  // Adjust this value to your preference
+	        bindings = <&kp Z>, <&de_eszett>;
+  		 };
     };
 
     keymap {
@@ -235,7 +243,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
         default_layer {
             bindings = <
-&kp K         &kp KP_DOT  &kp O       &kp KP_COMMA          &kp Y     &kp V   &kp G       &kp C       &kp L HT_TP  &de_eszett Z
+&kp K         &kp KP_DOT  &kp O       &kp KP_COMMA          &kp Y     &kp V   &kp G       &kp C       &kp L HT_TP  &z_eszett
 &kp H         &hm LCTL A  &hm LALT E  &hm LGUI I            &kp U     &kp D   &hm RGUI T  &hm RALT R  &hm RCTL S   &kp F
 &hs LSHIFT X  &kp Q       &de_ae      &de_ue                &de_oe    &kp B   &kp P       &kp W       &kp M        &hs RSHIFT J
                                       &mt LC(LS(LALT)) SPC  &trans    &trans  &kp E
