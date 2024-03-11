@@ -10,7 +10,15 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #include <helper.h>
-#include <german.dtsi>
+
+/* German umlauts & Unicode */
+ZMK_UNICODE_PAIR(   de_ae,      N0, N0,  E, N4,    N0, N0,  C, N4)
+ZMK_UNICODE_PAIR(   de_oe,      N0, N0,  F, N6,    N0, N0,  D, N6)
+ZMK_UNICODE_PAIR(   de_ue,      N0, N0,  F,  C,    N0, N0,  D,  C)
+ZMK_UNICODE_PAIR(de_eszett,     N0, N0,  D,  F,    N1, E,   N9, E)
+
+ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
+
 
 
 &mt {
@@ -205,7 +213,7 @@
        		default_layer {
 		bindings = <
 //
-		&kp K &kp C &kp O &kp M &kp Y									&kp V &kp G  &kp C    &kp L  &ht_tp &de_eszett Z
+		&kp K &kp C &kp O &kp M &kp Y									&kp V &kp G  &kp C    &kp L  HT_TP(&de_eszett Z)
 		&kp H &hm LCTL A &hm LALT E &hm LGUI I &kp U 			       	&kp D  &hm RGUI T &hm RALT R &hm RCTL S &kp F
 		&hs LSHIFT X &kp Q &de_ae &de_ue &de_oe							 &kp B &kp P  &kp W &kp M  &hs RSHIFT J
 //
